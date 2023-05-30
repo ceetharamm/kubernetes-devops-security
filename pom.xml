@@ -45,7 +45,20 @@
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
-			
+			<plugins>
+				<plugin>
+					<groupId>org.jacoco</groupId>
+					<artifactId>jacoco-maven-plugin</artifactId>
+					<reportSets>
+					<reportSet>
+						<reports>
+						<!-- select non-aggregate reports -->
+						<report>report</report>
+						</reports>
+					</reportSet>
+					</reportSets>
+				</plugin>
+			</plugins>
 		</plugins>
 	</build>
 
