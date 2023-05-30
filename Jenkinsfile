@@ -19,6 +19,15 @@ pipeline {
               jacoco execPattern: 'target/jacoco.exec'
             }
           }
-        }   
+        }
+    
+        stage('Docker Build and Push') {
+            steps {
+              sh 'printenv'
+              sh 'docker build -t ceetharamm/numeric-app:""$GIT_COMMIT"" .'
+              sh 'docker push ceetharamm/numeric-app:""$GIT_COMMIT""'
+            }
+        }
+    
     }
 }
