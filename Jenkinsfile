@@ -31,15 +31,15 @@ pipeline {
             }
         }
     
-        stage('Mutation Test - PIT') {
-            steps {
-                sh 'mvn org.pitest:pitest-maven:mutationCoverage'
+        stage('Mutation Tests - PIT') {
+          steps {
+            sh "mvn org.pitest:pitest-maven:mutationCoverage"
+          }
+          post {
+            always {
+              pitmutation mutationStatsFile: '**/target/pit-reports/**/mutations.xml'
             }
-            post {
-              always {
-                pitmutation mutationStatsFile: '**/target/pit-reports/**/mutations.xml'
-              }
-            }
+          }
         }
     
         stage('Kuberneted Deployment - Dev') {
