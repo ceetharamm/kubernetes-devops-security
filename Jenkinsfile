@@ -36,8 +36,8 @@ pipeline {
                 sh 'mvn org.pitest:pitest-maven:mutationCoverage'
             }
             post {
-              always{
-                pitmutation.mutationStatsFile:.'**/target/pit-reports/**/mutation.xml'
+              always {
+                pitmutation mutationStatsFile: '**/target/pit-reports/**/mutation.xml'
               }
             }
         }
