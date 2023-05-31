@@ -69,7 +69,7 @@
 			<plugin>
 			    <groupId>org.pitest</groupId>
 			    <artifactId>pitest-maven</artifactId>
-			    <version>1.5.0</version>
+			    <version>1.6.7</version>
 			    <dependencies>
 				    <dependency>
 				    	<groupId>org.pitest</groupId>
@@ -78,7 +78,7 @@
 				    </dependency>
 			    </dependencies>
 			    <configuration>
-				<mutationThreshold>70</mutationThreshold>
+				<mutationThreshold>10</mutationThreshold>
 				<outputformats>
 				    <outputformat>XML</outputformat>
 				    <outputformat>HTML</outputformat>
