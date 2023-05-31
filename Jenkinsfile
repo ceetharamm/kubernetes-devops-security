@@ -42,6 +42,12 @@ pipeline {
           }
         }
     
+        stage('SonarQube - SAST') {
+            steps {
+              sh "mvn clean verify sonar:sonar -Dsonar.projectKey=numeric-application -Dsonar.projectName='numeric-application' -Dsonar.host.url=http://devsecops-yoms.eastus.cloudapp.azure.com:9000   -Dsonar.token=sqp_cef539346a53068c6bcabdf875c5dfd07ba31ce9"
+            }
+        }
+    
         stage('Kuberneted Deployment - Dev') {
             steps {
               withKubeConfig([credentialsId: "kubeconfig"]){
