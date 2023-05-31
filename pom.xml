@@ -71,11 +71,11 @@
 			    <artifactId>pitest-maven</artifactId>
 			    <version>1.5.0</version>
 			    <dependencies>
-				    <dependencie>
+				    <dependency>
 				    	<groupId>org.pitest</groupId>
-					<artifactId>pitest-junit-plugin</artifactId>
+					<artifactId>pitest-junit5-plugin</artifactId>
 					<version>0.12</version>
-				    </dependencie>
+				    </dependency>
 			    </dependencies>
 			    <configuration>
 				<mutuationThreshold>70</mutuationThreshold>
