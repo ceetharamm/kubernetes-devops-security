@@ -45,6 +45,7 @@
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
+			<!-- Jacoco Plugin -->
 			<plugin>
 				<groupId>org.jacoco</groupId>
 				<artifactId>jacoco-maven-plugin</artifactId>
@@ -63,6 +64,26 @@
 						</goals>
 					</execution>
 				</executions>
+			</plugin>
+			<!-- Pitest Mutation Plugin -->
+			<plugin>
+			    <groupId>org.pitest</groupId>
+			    <artifactId>pitest-maven</artifactId>
+			    <version>1.5.0</version>
+			    <dependencies>
+				    <dependencie>
+				    	<groupId>org.pitest</groupId>
+					<artifactId>pitest-junit-plugin</artifactId>
+					<version>0.12</version>
+				    </dependencie>
+			    </dependencies>
+			    <configuration>
+				<mutuationThreshold>70</mutuationThreshold>
+				<outputformats>
+				    <outputformat>XML</outputformat>
+				    <outputformat>HTML</outputformat>
+				</outputformats>
+			    </configuration>
 			</plugin>
 		</plugins>
 	</build>
